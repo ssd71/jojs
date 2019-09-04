@@ -1,0 +1,36 @@
+{
+  "name": "jojs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "clean": "rm -r dist",
+    "build": "eslint \"./src/**/*.ts\" && tsc -b tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssd71/jojs.git"
+  },
+  "author": "ssd71",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ssd71/jojs/issues"
+  },
+  "homepage": "https://github.com/ssd71/jojs#readme",
+  "devDependencies": {
+    "@types/bluebird": "^3.5.27",
+    "@types/core-js": "^2.5.2",
+    "@types/node": "^12.7.3",
+    "@types/node-cron": "^2.0.2",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.3.0",
+    "eslint-config-google": "^0.13.0",
+    "typescript": "^3.6.2"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.5",
+    "core-js": "^3.2.1"
+  }
+}
