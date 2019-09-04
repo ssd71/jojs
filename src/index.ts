@@ -47,8 +47,6 @@ class anidbInstance {
       if (job) {
         console.log('req\'ing', job.req);
         this.makeReq(job.req, job.callback);
-      } else {
-        console.log('idling\n');
       }
     });
     this.reqSock = dgram.createSocket('udp4');
