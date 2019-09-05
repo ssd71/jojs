@@ -112,7 +112,7 @@ class anidbInstance {
    * @param {number} aid AniDB Anime ID of the anime to get
    * @return {Promise<Anime>} The retrieved anime object
    */
-  getAnime(aid: number): Anime {
+  getAnime(aid: number): Promise<Anime> {
     const retval = new Promise((resolve: Function) => {
       this.jobs.push({
         req: `ANIME aid=${aid}&s=${this.sid}`,
