@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "clean": "rm -r dist",
-    "build": "eslint \"./src/**/*.ts\" && tsc -b tsconfig.json"
+    "build": "eslint \"./src/**/*.ts\" && tsc"
   },
   "repository": {
     "type": "git",
