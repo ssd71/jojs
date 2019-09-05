@@ -1,0 +1,23 @@
+export = {
+  propNames: [
+    'aid',
+    'eps',
+    'count',
+    'special_count',
+    'rating',
+    'votes',
+    'tmprating',
+    'tmpvotes',
+    'review_avg_Rating',
+    'reviews',
+    'year',
+    'type',
+    'romaji',
+    'kanji',
+    'english',
+    'other',
+    'short_names',
+    'synonyms',
+    'cat_list',
+  ],
+};
