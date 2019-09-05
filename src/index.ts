@@ -131,13 +131,18 @@ class anidbInstance {
 
   /**
    * Logs out the current session
+   * @return {Promise<any>} Promise object fulfilled on logout
    */
-  logout() {
-    this.jobs.push({
-      req: `LOGOUT s=${this.sid}`,
-      callback: () => {
-        console.log('Logged Out');
-      },
+  logout(): Promise<any> {
+    return new Promise((resolve: Function) => {
+      this.jobs.push({
+        req: `LOGOUT s=${this.sid}`,
+        callback: () => {
+          this.sid = '';
+          console.log('Logged Out');
+          resolve();
+        },
+      });
     });
   }
 }
