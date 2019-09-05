@@ -72,7 +72,7 @@ class anidbInstance {
 
     this.reqSock.once('message', (msg) => {
       const r = msg.toString().split(' ');
-      console.log(r);
+      console.log(msg.toString());
       const statusCode = r[0];
       if (statusCode === '200') {
         this.sid = r[1];
