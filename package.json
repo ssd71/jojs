@@ -34,11 +34,12 @@
   },
   "dependencies": {
     "bluebird": "^3.5.5",
-    "core-js": "^3.2.1"
+    "core-js": "^3.2.1",
+    "node-cron": "^2.0.3"
   },
   "jest": {
     "roots": [
-      "<rootDir>/src"
+      "<rootDir>/test"
     ],
     "transform": {
       "^.+\\.ts$": "ts-jest"
