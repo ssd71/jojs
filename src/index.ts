@@ -24,6 +24,7 @@ class anidbInstance {
   jobs: Array<{ req: string; callback: Function }> = [];
   reqSock: dgram.Socket;
   jobber: cron.ScheduledTask;
+  opt: connOpts;
 
   /**
    * Create a new anidbInstance Object and auth to the API
@@ -38,11 +39,20 @@ class anidbInstance {
    * url: String; // API Endpoint, defaults to api.anidb.net
    * port: number; // AniDB API port, defaults to 9000
    */
-  constructor(auth: Auth, public opt: connOpts) {
+  constructor(auth: Auth, opt?: connOpts) {
     this.makeReq = this.makeReq.bind(this);
     this.getAnime = this.getAnime.bind(this);
 
-    this.jobber = cron.schedule('*/2 * * * * *', () => {
+    this.opt = !opt ?
+      {
+        port: 9000,
+        url: 'api.anidb.net',
+      } : {
+        port: opt.port || 9000,
+        url: opt.url || 'api.anidb.net',
+      };
+
+    this.jobber = cron.schedule('*/4 * * * * *', () => {
       const job = this.jobs.shift();
       if (job) {
         console.log('req\'ing', job.req);
@@ -71,14 +81,6 @@ class anidbInstance {
         throw e;
       }
     });
-    this.opt = !opt ?
-      {
-        port: 9000,
-        url: 'api.anidb.net',
-      } : {
-        port: opt.port || 9000,
-        url: opt.url || 'api.anidb.net',
-      };
     this.reqSock.send(req, this.opt.port, this.opt.url, (e) => {
       if (e) {
         throw e;
