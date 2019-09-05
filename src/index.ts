@@ -70,21 +70,19 @@ class anidbInstance {
     ].join('');
     console.log('Sent Request: ', req);
 
-    this.reqSock.once('message', (msg) => {
-      const r = msg.toString().split(' ');
-      console.log(msg.toString());
-      const statusCode = r[0];
-      if (statusCode === '200') {
-        this.sid = r[1];
-      } else {
-        const e = new Error('Auth error check credentials or anidb status');
-        throw e;
-      }
-    });
-    this.reqSock.send(req, this.opt.port, this.opt.url, (e) => {
-      if (e) {
-        throw e;
-      }
+    this.jobs.push({
+      req,
+      callback: (msg: string) => {
+        const r = msg.toString().split(' ');
+        console.log(msg.toString());
+        const statusCode = r[0];
+        if (statusCode === '200') {
+          this.sid = r[1];
+        } else {
+          const e = new Error('Auth error check credentials or anidb status');
+          throw e;
+        }
+      },
     });
   }
 
