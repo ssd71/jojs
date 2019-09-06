@@ -4,17 +4,17 @@ import utils = require('./__util__');
 
 let c: Anidb;
 
-beforeAll(() => {
-  c = new Anidb({
-    username: process.env.UNAME!,
-    password: process.env.PASSWD!,
-    client: process.env.CLIENT!,
-    clientver: parseInt(process.env.CLVER!),
-    protover: parseInt(process.env.PVER!),
-  });
-});
-
 describe('AniDB', () => {
+  beforeAll(() => {
+    c = new Anidb({
+      username: process.env.UNAME!,
+      password: process.env.PASSWD!,
+      client: process.env.CLIENT!,
+      clientver: parseInt(process.env.CLVER!),
+      protover: parseInt(process.env.PVER!),
+    });
+  });
+
   it('pings AniDB server', (done) => {
     c.jobs.push({
       req: 'PING',
@@ -36,11 +36,10 @@ describe('AniDB', () => {
           }
         });
   }, 30000);
-});
 
-// afterAll((done) => {
-//   c.logout().then(() => {
-//     expect(c.sid).toBeFalsy();
-//     done();
-//   });
-// });
+  afterAll(async () => {
+    return c.logout().then(() => {
+      expect(c.sid).toBeFalsy();
+    });
+  });
+});
