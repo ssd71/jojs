@@ -1,6 +1,7 @@
 # JoJS
 
 [![Build Status](https://img.shields.io/travis/com/ssd71/jojs?style=flat-square)](https://travis-ci.org/ssd71/jojs)
+![npm](https://img.shields.io/npm/v/jojs?style=flat-square)
 
 JoJS is a library to make requests to the AniDB API.
 
