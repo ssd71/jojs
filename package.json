@@ -32,8 +32,9 @@
     "eslint-config-google": "^0.13.0",
     "mocha": "^6.2.0",
     "ts-node": "^8.3.0",
-    "typescript": "^3.6.2",
-    "typedoc": "^0.15.0"
+    "typedoc": "^0.15.0",
+    "typedoc-plugin-markdown": "^2.1.10",
+    "typescript": "^3.6.2"
   },
   "dependencies": {
     "bluebird": "^3.5.5",
