@@ -2,7 +2,7 @@ import dgram = require('dgram');
 import cron = require('node-cron');
 import bluebird = require('bluebird');
 const {Promise} = bluebird;
-import Anime = require('./anime');
+import Anime = require('./Anime');
 
 
 /**
