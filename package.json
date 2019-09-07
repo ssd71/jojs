@@ -2,7 +2,7 @@
   "name": "jojs",
   "version": "1.0.0",
   "description": "",
-  "main": "./dist/index.js",
+  "main": "./dist/AniDB.js",
   "scripts": {
     "test": "mocha -r ts-node/register test/**/*.test.ts --exit",
     "clean": "rm -r dist",
