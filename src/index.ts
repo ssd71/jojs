@@ -19,15 +19,16 @@ interface connOpts {
 /**
  * A class for interacting with the UDP API of AniDB
  */
-class anidbInstance {
+class AniDB {
   sid: string = '';
+  up: Promise<boolean>;
   jobs: Array<{ req: string; callback: Function }> = [];
   reqSock: dgram.Socket;
   jobber: cron.ScheduledTask;
   opt: connOpts;
 
   /**
-   * Create a new anidbInstance Object and auth to the API
+   * Create a new AniDB Object and auth to the API
    * @param {Auth} auth Auth object containing AniDB credentials:
    * -- All fields are required --
    * username: String;
@@ -42,6 +43,7 @@ class anidbInstance {
   constructor(auth: Auth, opt?: connOpts) {
     this.makeReq = this.makeReq.bind(this);
     this.getAnime = this.getAnime.bind(this);
+    this.logout = this.logout.bind(this);
 
     this.opt = !opt ?
       {
@@ -70,19 +72,22 @@ class anidbInstance {
     ].join('');
     console.log('Sent Request: ', req);
 
-    this.jobs.push({
-      req,
-      callback: (msg: string) => {
-        const r = msg.toString().split(' ');
-        console.log(msg.toString());
-        const statusCode = r[0];
-        if (statusCode === '200') {
-          this.sid = r[1];
-        } else {
-          const e = new Error('Auth error check credentials or anidb status');
-          throw e;
-        }
-      },
+    this.up = new Promise((resolve: Function, reject: Function) => {
+      this.jobs.push({
+        req,
+        callback: (msg: string) => {
+          const r = msg.toString().split(' ');
+          console.log(msg.toString());
+          const statusCode = r[0];
+          if (statusCode === '200') {
+            this.sid = r[1];
+            resolve(true);
+          } else {
+            const e = new Error('Auth error check credentials or anidb status');
+            reject(e);
+          }
+        },
+      });
     });
   }
 
@@ -138,6 +143,7 @@ class anidbInstance {
         callback: () => {
           this.sid = '';
           console.log('Logged Out');
+          this.reqSock.close(() => console.log('Socket closed'));
           resolve();
         },
       });
@@ -145,4 +151,4 @@ class anidbInstance {
   }
 }
 
-export = anidbInstance;
+export = AniDB;

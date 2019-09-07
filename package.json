@@ -4,7 +4,7 @@
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "mocha -r ts-node/register test/**/*.test.ts --exit",
     "clean": "rm -r dist",
     "build": "eslint \"./src/**/*.ts\" && tsc"
   },
@@ -20,29 +20,23 @@
   "homepage": "https://github.com/ssd71/jojs#readme",
   "devDependencies": {
     "@types/bluebird": "^3.5.27",
+    "@types/chai": "^4.2.1",
     "@types/core-js": "^2.5.2",
-    "@types/jest": "^24.0.18",
+    "@types/mocha": "^5.2.7",
     "@types/node": "^12.7.3",
     "@types/node-cron": "^2.0.2",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
+    "chai": "^4.2.0",
     "eslint": "^6.3.0",
     "eslint-config-google": "^0.13.0",
-    "jest": "^24.9.0",
-    "ts-jest": "^24.0.2",
+    "mocha": "^6.2.0",
+    "ts-node": "^8.3.0",
     "typescript": "^3.6.2"
   },
   "dependencies": {
     "bluebird": "^3.5.5",
     "core-js": "^3.2.1",
     "node-cron": "^2.0.3"
-  },
-  "jest": {
-    "roots": [
-      "<rootDir>/test"
-    ],
-    "transform": {
-      "^.+\\.ts$": "ts-jest"
-    }
   }
 }

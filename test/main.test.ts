@@ -1,45 +1,46 @@
-import Anidb = require('../src/index');
-// import Anime = require('../src/anime');
+import AniDB = require('../src');
+import chai = require('chai');
 import utils = require('./__util__');
 
-let c: Anidb;
+const expect = chai.expect;
 
-describe('AniDB', () => {
-  beforeAll(() => {
-    c = new Anidb({
-      username: process.env.UNAME!,
-      password: process.env.PASSWD!,
-      client: process.env.CLIENT!,
-      clientver: parseInt(process.env.CLVER!),
-      protover: parseInt(process.env.PVER!),
-    });
+describe('AniDB module', function() {
+  this.timeout(14000);
+  const ins = new AniDB({
+    username: process.env.UNAME!,
+    password: process.env.PASSWD!,
+    client: process.env.CLIENT!,
+    clientver: parseInt(process.env.CLVER!),
+    protover: parseInt(process.env.PVER!),
   });
 
-  it('pings AniDB server', (done) => {
-    c.jobs.push({
+  before(function() {
+    return ins.up;
+  });
+
+  after(function() {
+    return ins.logout();
+  });
+
+  it('logs into AniDB server on creation', function() {
+    expect(ins.sid).not.to.be.equal('');
+  });
+
+  it('pings AniDB server', function(done) {
+    ins.jobs.push({
       req: 'PING',
       callback: (data: string) => {
-        expect(data).toMatchSnapshot();
+        expect(data).to.equal('300 PONG\n');
         done();
       }});
-  }, 30000);
-  it('logs in on creation', () => {
-    expect(c.sid).toBeTruthy();
-  }, 30000);
-  it('gets anime from anidb', () => {
-    c.getAnime(1)
-        .then((anime) => {
-          const {propNames} = utils;
-          for (let i = 0; i < propNames.length; i++) {
-            const res = anime.get(propNames[i]);
-            expect(res).toMatchSnapshot();
-          }
-        });
-  }, 30000);
+  });
 
-  afterAll(async () => {
-    return c.logout().then(() => {
-      expect(c.sid).toBeFalsy();
+  it('fetches anime by id', function() {
+    const {AnimeEx} = utils;
+    return ins.getAnime(1).then((anime) => {
+      for (let i = 0; i < AnimeEx.propNames.length; i++) {
+        expect(anime.get(AnimeEx.propNames[i])).to.equal(AnimeEx.propValues[i]);
+      }
     });
   });
 });

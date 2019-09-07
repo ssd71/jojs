@@ -34,7 +34,7 @@ class Anime {
       'cat_list',
     ];
 
-    for (let i = 0; i < animeRaw.length; i++) {
+    for (let i = 0; i < propNames.length; i++) {
       this.props[propNames[i]] = animeRaw[i];
     }
   }
