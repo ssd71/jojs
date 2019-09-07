@@ -1,7 +1,7 @@
 {
   "name": "jojs",
   "version": "1.0.0",
-  "description": "",
+  "description": "JoJS is a library to interact with the UDP API of AniDB",
   "main": "./dist/AniDB.js",
   "scripts": {
     "test": "mocha -r ts-node/register test/**/*.test.ts --exit",
