@@ -1,5 +1,5 @@
 import chai = require('chai');
-import Anime = require('../src/anime');
+import Anime = require('../src/Anime');
 import util = require('./__util__');
 
 const expect = chai.expect;

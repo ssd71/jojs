@@ -1,4 +1,4 @@
-import AniDB = require('../src');
+import AniDB = require('../src/AniDB');
 import chai = require('chai');
 import utils = require('./__util__');
 
