@@ -5,7 +5,7 @@
 
 JoJS is a library to make requests to the AniDB API.
 
-Read the docs [here](https://ssd71.github.io/jojs/)
+Read the docs [here](https://github.com/ssd71/jojs/blob/master/docs/globals.md)
 
 To contribute:
 
