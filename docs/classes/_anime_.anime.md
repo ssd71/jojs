@@ -31,7 +31,7 @@ Used to process and store Anime objects
 
 \+ **new Anime**(`animeRaw`: Array‹string›): *[Anime](_anime_.anime.md)*
 
-*Defined in [Anime.ts:7](https://github.com/ssd71/jojs/blob/19c480d/src/Anime.ts#L7)*
+*Defined in [Anime.ts:7](https://github.com/ssd71/jojs/blob/68be524/src/Anime.ts#L7)*
 
 Instantiates an Anime Object using an array of attributes
 
@@ -49,7 +49,7 @@ Name | Type |
 
 • **animeRaw**: *Array‹string›*
 
-*Defined in [Anime.ts:12](https://github.com/ssd71/jojs/blob/19c480d/src/Anime.ts#L12)*
+*Defined in [Anime.ts:12](https://github.com/ssd71/jojs/blob/68be524/src/Anime.ts#L12)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **props**: *object*
 
-*Defined in [Anime.ts:5](https://github.com/ssd71/jojs/blob/19c480d/src/Anime.ts#L5)*
+*Defined in [Anime.ts:5](https://github.com/ssd71/jojs/blob/68be524/src/Anime.ts#L5)*
 
 #### Type declaration:
 
@@ -69,7 +69,7 @@ ___
 
 ▸ **get**(`key`: string): *string | number*
 
-*Defined in [Anime.ts:47](https://github.com/ssd71/jojs/blob/19c480d/src/Anime.ts#L47)*
+*Defined in [Anime.ts:47](https://github.com/ssd71/jojs/blob/68be524/src/Anime.ts#L47)*
 
 A getter for all the props for tidying purposes
 

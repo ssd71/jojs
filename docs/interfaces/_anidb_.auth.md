@@ -26,7 +26,7 @@ Interface for storing AniDB credentials
 
 • **client**: *string*
 
-*Defined in [AniDB.ts:27](https://github.com/ssd71/jojs/blob/19c480d/src/AniDB.ts#L27)*
+*Defined in [AniDB.ts:27](https://github.com/ssd71/jojs/blob/68be524/src/AniDB.ts#L27)*
 
 AniDB registered client name
 
@@ -36,7 +36,7 @@ ___
 
 • **clientver**: *number*
 
-*Defined in [AniDB.ts:31](https://github.com/ssd71/jojs/blob/19c480d/src/AniDB.ts#L31)*
+*Defined in [AniDB.ts:31](https://github.com/ssd71/jojs/blob/68be524/src/AniDB.ts#L31)*
 
 Version of the client in use
 
@@ -46,7 +46,7 @@ ___
 
 • **password**: *string*
 
-*Defined in [AniDB.ts:19](https://github.com/ssd71/jojs/blob/19c480d/src/AniDB.ts#L19)*
+*Defined in [AniDB.ts:19](https://github.com/ssd71/jojs/blob/68be524/src/AniDB.ts#L19)*
 
 The corresponding password
 
@@ -56,7 +56,7 @@ ___
 
 • **protover**: *number*
 
-*Defined in [AniDB.ts:23](https://github.com/ssd71/jojs/blob/19c480d/src/AniDB.ts#L23)*
+*Defined in [AniDB.ts:23](https://github.com/ssd71/jojs/blob/68be524/src/AniDB.ts#L23)*
 
 Version of the API to use
 
@@ -66,6 +66,6 @@ ___
 
 • **username**: *string*
 
-*Defined in [AniDB.ts:15](https://github.com/ssd71/jojs/blob/19c480d/src/AniDB.ts#L15)*
+*Defined in [AniDB.ts:15](https://github.com/ssd71/jojs/blob/68be524/src/AniDB.ts#L15)*
 
 AniDB username of the user

@@ -37,7 +37,7 @@ A class for interacting with the UDP API of AniDB
 
 \+ **new AniDB**(`auth`: [Auth](../interfaces/_anidb_.auth.md), `opt?`: [connOpts](../interfaces/_anidb_.connopts.md)): *[AniDB](_anidb_.anidb.md)*
 
-*Defined in [AniDB.ts:74](https://github.com/ssd71/jojs/blob/19c480d/src/AniDB.ts#L74)*
+*Defined in [AniDB.ts:74](https://github.com/ssd71/jojs/blob/68be524/src/AniDB.ts#L74)*
 
 Create a new AniDB Object and auth to the API
 
@@ -56,7 +56,7 @@ Name | Type | Description |
 
 • **jobber**: *ScheduledTask*
 
-*Defined in [AniDB.ts:70](https://github.com/ssd71/jojs/blob/19c480d/src/AniDB.ts#L70)*
+*Defined in [AniDB.ts:70](https://github.com/ssd71/jojs/blob/68be524/src/AniDB.ts#L70)*
 
 A `node-cron` task that executes requests from `jobs` periodically
 
@@ -66,7 +66,7 @@ ___
 
 • **jobs**: *Array‹object›* =  []
 
-*Defined in [AniDB.ts:62](https://github.com/ssd71/jojs/blob/19c480d/src/AniDB.ts#L62)*
+*Defined in [AniDB.ts:62](https://github.com/ssd71/jojs/blob/68be524/src/AniDB.ts#L62)*
 
 Queue of pending requests
 
@@ -81,7 +81,7 @@ ___
 
 • **opt**: *[connOpts](../interfaces/_anidb_.connopts.md)*
 
-*Defined in [AniDB.ts:74](https://github.com/ssd71/jojs/blob/19c480d/src/AniDB.ts#L74)*
+*Defined in [AniDB.ts:74](https://github.com/ssd71/jojs/blob/68be524/src/AniDB.ts#L74)*
 
 Optional connection parameters; see constructor
 
@@ -91,7 +91,7 @@ ___
 
 • **reqSock**: *Socket*
 
-*Defined in [AniDB.ts:66](https://github.com/ssd71/jojs/blob/19c480d/src/AniDB.ts#L66)*
+*Defined in [AniDB.ts:66](https://github.com/ssd71/jojs/blob/68be524/src/AniDB.ts#L66)*
 
 The socket used to make requests and receive data from AniDB
 
@@ -101,7 +101,7 @@ ___
 
 • **sid**: *string* = ""
 
-*Defined in [AniDB.ts:49](https://github.com/ssd71/jojs/blob/19c480d/src/AniDB.ts#L49)*
+*Defined in [AniDB.ts:49](https://github.com/ssd71/jojs/blob/68be524/src/AniDB.ts#L49)*
 
 AniDB session id retrieved from server on login
 
@@ -111,7 +111,7 @@ ___
 
 • **up**: *Promise‹boolean›*
 
-*Defined in [AniDB.ts:53](https://github.com/ssd71/jojs/blob/19c480d/src/AniDB.ts#L53)*
+*Defined in [AniDB.ts:53](https://github.com/ssd71/jojs/blob/68be524/src/AniDB.ts#L53)*
 
 Promise that resolves to `true` on successful login
 
@@ -121,7 +121,7 @@ Promise that resolves to `true` on successful login
 
 ▸ **getAnime**(`aid`: number): *Promise‹[Anime](_anime_.anime.md)›*
 
-*Defined in [AniDB.ts:178](https://github.com/ssd71/jojs/blob/19c480d/src/AniDB.ts#L178)*
+*Defined in [AniDB.ts:178](https://github.com/ssd71/jojs/blob/68be524/src/AniDB.ts#L178)*
 
 Gets an anime from AniDB
 
@@ -141,7 +141,7 @@ ___
 
 ▸ **logout**(): *Promise‹any›*
 
-*Defined in [AniDB.ts:199](https://github.com/ssd71/jojs/blob/19c480d/src/AniDB.ts#L199)*
+*Defined in [AniDB.ts:199](https://github.com/ssd71/jojs/blob/68be524/src/AniDB.ts#L199)*
 
 Logs out the current session
 
@@ -155,7 +155,7 @@ ___
 
 ▸ **makeReq**(`req`: string, `callback`: Function): *void*
 
-*Defined in [AniDB.ts:159](https://github.com/ssd71/jojs/blob/19c480d/src/AniDB.ts#L159)*
+*Defined in [AniDB.ts:159](https://github.com/ssd71/jojs/blob/68be524/src/AniDB.ts#L159)*
 
 Function to make requests to the AniDB API
 

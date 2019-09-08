@@ -25,4 +25,4 @@
 
 • **Promise**: *Bluebird*
 
-*Defined in [AniDB.ts:4](https://github.com/ssd71/jojs/blob/19c480d/src/AniDB.ts#L4)*
+*Defined in [AniDB.ts:4](https://github.com/ssd71/jojs/blob/68be524/src/AniDB.ts#L4)*

@@ -23,7 +23,7 @@ Interface to store AniDB connection parameters; see AniDB constructor
 
 • **port**: *number*
 
-*Defined in [AniDB.ts:39](https://github.com/ssd71/jojs/blob/19c480d/src/AniDB.ts#L39)*
+*Defined in [AniDB.ts:39](https://github.com/ssd71/jojs/blob/68be524/src/AniDB.ts#L39)*
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 • **url**: *string*
 
-*Defined in [AniDB.ts:38](https://github.com/ssd71/jojs/blob/19c480d/src/AniDB.ts#L38)*
+*Defined in [AniDB.ts:38](https://github.com/ssd71/jojs/blob/68be524/src/AniDB.ts#L38)*
