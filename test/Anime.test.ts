@@ -7,7 +7,7 @@ const expect = chai.expect;
 describe('Anime module', () => {
   const {AnimeEx} = util;
   const {propNames} = AnimeEx;
-  const ex = new Anime(AnimeEx.propValues);
+  const ex = new Anime(AnimeEx.propValuesRaw);
   it('constructs Anime object from array of properties', () => {
     // console.log(ex.props, AnimeEx.props);
     expect(ex.props).to.include(AnimeEx.props);
