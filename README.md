@@ -3,7 +3,7 @@
 [![Build Status](https://img.shields.io/travis/com/ssd71/jojs?style=flat-square)](https://travis-ci.org/ssd71/jojs)
 ![npm](https://img.shields.io/npm/v/jojs?style=flat-square)
 
-JoJS is a library to make requests to the AniDB API.
+JoJS is a library to make requests to the AniDB API. This uses UDP sockets to communicate with the AniDB server. Currently it can only fetch anime details by its respective AID on AniDB.  
 
 Read the docs [here](https://github.com/ssd71/jojs/blob/master/docs/globals.md)
 
