@@ -15,3 +15,4 @@ To contribute:
 - `npm run build`
 
 Note that for any new functionality, tests must be written.
+Have a nice day, Welcome!.
